@@ -1,0 +1,7 @@
+{
+  "name": "FULLIN - Power Bank Rental",
+  "description": "A high-conversion landing page for FULLIN, a modern mobile power bank rental service designed for urban lifestyles.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
