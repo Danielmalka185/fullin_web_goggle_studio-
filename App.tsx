@@ -408,18 +408,6 @@ const HeroVisual = ({ lang }: { lang: Language }) => (
         </div>
       </div>
     </div>
-    <div className={`absolute right-0 top-0 md:top-20 z-20 w-1/2 md:w-2/3 transform ${lang === 'he' ? '-rotate-12' : 'rotate-12'} hover:rotate-0 transition-transform duration-1000 delay-100`}>
-      <HardwareImage className="w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.3)]" />
-      <div className={`absolute -bottom-10 ${lang === 'he' ? 'left-0' : 'right-0'} bg-white shadow-2xl rounded-2xl p-4 border border-zinc-100 animate-bounce-slow flex items-center gap-3`}>
-        <div className="w-10 h-10 bg-[#3BB55C] rounded-xl flex items-center justify-center text-white">
-          <Zap size={20} fill="currentColor" />
-        </div>
-        <div className={lang === 'he' ? 'pl-4' : 'pr-4'}>
-          <div className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">{lang === 'he' ? 'סטטוס' : 'Status'}</div>
-          <div className="text-sm font-black text-zinc-900">{lang === 'he' ? 'טעינה מהירה' : 'Charging Fast'}</div>
-        </div>
-      </div>
-    </div>
   </div>
 );
 
@@ -1196,9 +1184,6 @@ export default function App() {
               <button className="bg-[#3BB55C] text-white px-12 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-all shadow-xl">App Store</button>
               <button className="bg-white text-zinc-900 px-12 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-all shadow-xl">Play Store</button>
             </div>
-          </div>
-          <div className={`hidden md:block relative z-10 flex-shrink-0 ${lang === 'he' ? 'mr-12' : 'ml-12'}`}>
-            <HardwareImage className="w-80" />
           </div>
         </div>
       </section>
