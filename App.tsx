@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 // --- Types ---
-type Page = 'home' | 'how-it-works' | 'pricing' | 'find-power' | 'the-app' | 'business' | 'station-detail';
+type Page = 'home' | 'how-it-works' | 'pricing' | 'find-power' | 'the-app' | 'business' | 'station-detail' | 'contact';
 type Language = 'en' | 'he';
 
 // --- Translations ---
@@ -42,6 +42,14 @@ const translations = {
       cta: 'Scan to Start',
       priceLabel: '₪12 / hr',
       priceSub: 'Flat Rate'
+    },
+    homeSteps: {
+      title: 'How it Works',
+      steps: [
+        { title: 'Unlock', desc: 'Scan the QR code and the battery pops out instantly.' },
+        { title: 'Charge', desc: 'Plug in any device using the high-speed built-in cables.' },
+        { title: 'Return', desc: 'Drop it off at any available Fulin station citywide.' }
+      ]
     },
     features: {
       cables: { title: 'Built-in Cables', desc: 'No more messy wires. Every bank includes Lightning, USB-C, and Micro-USB cables.' },
@@ -82,7 +90,7 @@ const translations = {
       claim: 'Claim Now',
       max: 'MAX',
       capped: 'capped per day',
-      footer: 'Automatic Billing • No Deposits • Instant Access'
+      footer: 'Automatic Billing • Instant Access'
     },
     find: {
       title: <>Find <span className="text-[#3BB55C]">Power</span></>,
@@ -97,10 +105,11 @@ const translations = {
     faq: {
       title: 'Frequently Asked Questions',
       questions: [
-        { q: 'How do I rent a power bank?', a: 'Just download the FULLIN app, find a station, and scan the QR code. The power bank will pop out automatically.' },
-        { q: 'Where can I return the power bank?', a: 'You can return it to any FULLIN station in the city. Just push it into an empty slot until it clicks.' },
+        { q: 'How do I rent a power bank?', a: 'Easy as getting a soda! Just scan the QR code with your phone or app, follow the instructions, and you\'re done.' },
+        { q: 'Where can I return the power bank?', a: 'You can return it to any station nationwide within 48 hours of rental.' },
         { q: 'What cables are included?', a: 'Every FULLIN power bank comes with built-in Apple Lightning, USB-C, and Micro-USB cables.' },
-        { q: 'How much does it cost?', a: 'The first hour is free! After that, it costs ₪12 per hour, capped at ₪100 per day.' }
+        { q: 'How much does it cost?', a: 'The first hour is free! After that, it costs ₪12 per hour, capped at ₪50 per day.' },
+        { q: 'What happens if I don\'t return it?', a: 'The honor is ours! You\'ve become an ambassador - FULLIN is now yours. You\'ve purchased the power bank for a total of ₪200 (including the two-day rental fee).' }
       ]
     },
     appSection: {
@@ -195,6 +204,14 @@ const translations = {
       priceLabel: '12 ₪ / שעה',
       priceSub: 'מחיר אחיד'
     },
+    homeSteps: {
+      title: 'איך זה עובד?',
+      steps: [
+        { title: 'משחררים', desc: 'סורקים את קוד ה-QR והמטען יוצא מהעמדה באופן מיידי.' },
+        { title: 'טוענים', desc: 'מחברים כל מכשיר באמצעות הכבלים המובנים לטעינה מהירה.' },
+        { title: 'מחזירים', desc: 'פשוט מחזירים לכל עמדת FULLIN פנויה ברחבי העיר.' }
+      ]
+    },
     features: {
       cables: { title: 'כבלים מובנים', desc: 'בלי בלאגן של חוטים. כל מטען כולל כבלי Lightning, USB-C ו-Micro-USB.' },
       turbo: { title: 'טעינת טורבו', desc: 'טעינה מהירה מ-0% ל-50% ב-30 דקות בלבד עם טכנולוגיית הספק גבוה.' },
@@ -235,7 +252,7 @@ const translations = {
       claim: 'קבלת ההטבה',
       max: 'MAX',
       capped: 'מוגבל ליום',
-      footer: 'חיוב אוטומטי • ללא פיקדון • גישה מיידית'
+      footer: 'חיוב אוטומטי • גישה מיידית'
     },
     find: {
       title: <>חיפוש <span className="text-[#3BB55C]">עמדה</span></>,
@@ -250,10 +267,11 @@ const translations = {
     faq: {
       title: 'שאלות ותשובות',
       questions: [
-        { q: 'איך שוכרים מטען נייד?', a: 'פשוט מורידים את אפליקציית FULLIN, מוצאים עמדה וסורקים את קוד ה-QR. המטען ישתחרר מהעמדה באופן אוטומטי.' },
-        { q: 'איפה אפשר להחזיר את המטען?', a: 'ניתן להחזיר את המטען לכל עמדת FULLIN ברחבי העיר. פשוט דוחפים אותו לתא פנוי עד לשמיעת קליק.' },
+        { q: 'איך שוכרים מטען נייד?', a: 'קל כמו להוציא פחית קולה - סורקים את ה-QR בטלפון או באפליקציה, פועלים לפי ההנחיות וזהו!' },
+        { q: 'איפה אפשר להחזיר את המטען?', a: 'ניתן להחזיר לכל אחת מהעמדות ברחבי הארץ עד 48 שעות לאחר ההשכרה.' },
         { q: 'אילו כבלים כלולים במטען?', a: 'כל מטען של FULLIN מגיע עם כבלים מובנים של Apple Lightning, USB-C ו-Micro-USB.' },
-        { q: 'כמה זה עולה?', a: 'השעה הראשונה היא בחינם! לאחר מכן, העלות היא 12 ₪ לשעה, עם תקרה של 100 ₪ ליום.' }
+        { q: 'כמה זה עולה?', a: 'השעה הראשונה באפליקציה היא חינם ולאחר מכן העלות היא 12 ₪ לשעה עם תקרה של 50 ₪ ליום.' },
+        { q: 'מה קורה אם לא החזרתי?', a: 'הכבוד הוא שלנו ונהפכת לשגריר - FULLIN איתך ורכשת את המטען שלנו בעלות מינימלית של 200 ₪ (כמובן ההשכרה של היומיים כלולה במחיר).' }
       ]
     },
     appSection: {
@@ -663,7 +681,13 @@ const BusinessPage = ({ lang, setPage, setSelectedStationId }: { lang: Language,
             <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
               {lang === 'he' ? <>מוכנים להצטרף <br/> למהפכת <span className="text-[#3BB55C]">האנרגיה?</span></> : <>Ready to Join the <br/> <span className="text-[#3BB55C]">Power</span> Revolution?</>}
             </h2>
-            <button className="bg-[#3BB55C] text-white px-16 py-6 rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-[#3BB55C]/30">
+            <button 
+              onClick={() => {
+                setPage('contact');
+                window.scrollTo(0, 0);
+              }}
+              className="bg-[#3BB55C] text-white px-16 py-6 rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-[#3BB55C]/30"
+            >
               {t.cta}
             </button>
           </div>
@@ -713,18 +737,94 @@ const FAQSection = ({ lang }: { lang: Language }) => {
   );
 };
 
-const StationDetailPage = ({ lang, stationId }: { lang: Language, stationId: string | null }) => {
-  const t = translations[lang].business;
+const ContactForm = ({ lang }: { lang: Language }) => {
   const tc = translations[lang].contact;
-  const station = t.stations.find((s: any) => s.id === stationId);
   const [submitted, setSubmitted] = useState(false);
-
-  if (!station) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
   };
+
+  if (submitted) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="text-center py-12"
+      >
+        <div className="w-20 h-20 bg-[#3BB55C] rounded-full flex items-center justify-center text-white mx-auto mb-6">
+          <CheckCircle2 size={40} />
+        </div>
+        <h3 className="text-2xl font-black mb-2">{tc.success}</h3>
+      </motion.div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.name}</label>
+          <input required type="text" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.business}</label>
+          <input required type="text" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.phone}</label>
+          <input required type="tel" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.email}</label>
+          <input required type="email" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+        </div>
+      </div>
+      <div className="space-y-2">
+        <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.message}</label>
+        <textarea rows={4} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all resize-none"></textarea>
+      </div>
+      <button type="submit" className="w-full bg-[#3BB55C] text-white py-6 rounded-2xl font-black text-lg hover:bg-zinc-900 transition-all shadow-xl shadow-[#3BB55C]/20">
+        {tc.submit}
+      </button>
+    </form>
+  );
+};
+
+const ContactPage = ({ lang }: { lang: Language }) => {
+  const tc = translations[lang].contact;
+
+  return (
+    <section className="pt-48 pb-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="bg-zinc-900 rounded-[5rem] p-12 md:p-24 text-white overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-[#3BB55C]/5 blur-[120px]"></div>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div>
+              <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">{tc.title}</h1>
+              <p className="text-xl text-zinc-400 font-semibold leading-relaxed">
+                {tc.subtitle}
+              </p>
+            </div>
+            <div className="bg-white rounded-[3rem] p-8 md:p-12 text-zinc-900">
+              <ContactForm lang={lang} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const StationDetailPage = ({ lang, stationId }: { lang: Language, stationId: string | null }) => {
+  const t = translations[lang].business;
+  const tc = translations[lang].contact;
+  const station = t.stations.find((s: any) => s.id === stationId);
+
+  if (!station) return null;
 
   return (
     <section className="pt-48 pb-24 bg-white">
@@ -777,48 +877,7 @@ const StationDetailPage = ({ lang, stationId }: { lang: Language, stationId: str
               </p>
             </div>
             <div className="bg-white rounded-[3rem] p-8 md:p-12 text-zinc-900">
-              {submitted ? (
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
-                >
-                  <div className="w-20 h-20 bg-[#3BB55C] rounded-full flex items-center justify-center text-white mx-auto mb-6">
-                    <CheckCircle2 size={40} />
-                  </div>
-                  <h3 className="text-2xl font-black mb-2">{tc.success}</h3>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.name}</label>
-                      <input required type="text" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.business}</label>
-                      <input required type="text" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.phone}</label>
-                      <input required type="tel" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.email}</label>
-                      <input required type="email" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.message}</label>
-                    <textarea rows={4} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all resize-none"></textarea>
-                  </div>
-                  <button type="submit" className="w-full bg-[#3BB55C] text-white py-6 rounded-2xl font-black text-lg hover:bg-zinc-900 transition-all shadow-xl shadow-[#3BB55C]/20">
-                    {tc.submit}
-                  </button>
-                </form>
-              )}
+              <ContactForm lang={lang} />
             </div>
           </div>
         </div>
@@ -830,6 +889,7 @@ const StationDetailPage = ({ lang, stationId }: { lang: Language, stationId: str
 const HomePage = ({ setPage, lang }: { setPage: (p: Page) => void, lang: Language }) => {
   const t = translations[lang].hero;
   const f = translations[lang].features;
+  const s = translations[lang].homeSteps;
 
   return (
     <>
@@ -855,6 +915,32 @@ const HomePage = ({ setPage, lang }: { setPage: (p: Page) => void, lang: Languag
           </div>
           <div className="lg:order-2 flex justify-center">
             <HeroVisual lang={lang} />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white border-t border-zinc-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl md:text-6xl font-black text-center mb-20 text-zinc-900 tracking-tighter">{s.title}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {s.steps.map((step: any, i: number) => (
+              <div key={i} className="relative group">
+                <div className="bg-zinc-50 rounded-[3rem] p-12 border border-zinc-100 h-full transition-all hover:bg-white hover:shadow-2xl hover:border-[#3BB55C]/20">
+                  <div className="w-16 h-16 bg-[#3BB55C] text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#3BB55C]/20 group-hover:scale-110 transition-transform">
+                    {i === 0 && <Scan size={32} />}
+                    {i === 1 && <BatteryCharging size={32} />}
+                    {i === 2 && <CheckCircle2 size={32} />}
+                  </div>
+                  <h3 className="text-3xl font-black mb-4 text-zinc-900">{step.title}</h3>
+                  <p className="text-zinc-500 font-semibold leading-relaxed">{step.desc}</p>
+                </div>
+                {i < 2 && (
+                  <div className={`hidden lg:block absolute top-1/2 -translate-y-1/2 ${lang === 'he' ? '-left-4' : '-right-4'} z-10 text-[#3BB55C]/20`}>
+                    <ArrowRight size={32} className={lang === 'he' ? 'rotate-180' : ''} />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -967,30 +1053,76 @@ const PricingPage = ({ lang }: { lang: Language }) => {
   return (
     <section className="pt-48 pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <div className="mb-24">{t.title}</div>
-        <div className={`grid md:grid-cols-3 gap-8 ${lang === 'he' ? 'flex-row-reverse' : ''}`}>
-          <div className="bg-zinc-50 p-12 rounded-[4rem] border border-zinc-100 flex flex-col justify-center">
-            <div className={`flex items-baseline justify-center gap-2 ${lang === 'he' ? 'flex-row-reverse' : ''}`}>
-              <h2 className="text-7xl font-black text-zinc-900">₪12</h2>
-              <p className="text-xl font-bold text-zinc-400">{t.perHour}</p>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-24"
+        >
+          {t.title}
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          {/* Standard Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="bg-zinc-50 p-12 rounded-[3.5rem] border border-zinc-100 flex flex-col justify-between hover:bg-white hover:shadow-2xl transition-all group"
+          >
+            <div className="mb-12">
+              <span className="text-zinc-400 font-black uppercase tracking-widest text-xs mb-4 block">{t.standard}</span>
+              <div className={`flex items-baseline justify-center gap-2 ${lang === 'he' ? 'flex-row-reverse' : ''}`}>
+                <h2 className="text-7xl font-black text-zinc-900 group-hover:text-[#3BB55C] transition-colors">₪12</h2>
+                <p className="text-xl font-bold text-zinc-400">{t.perHour}</p>
+              </div>
             </div>
-          </div>
-          <div className="bg-[#3BB55C] text-white p-12 rounded-[4rem] shadow-2xl shadow-[#3BB55C]/30 relative overflow-hidden flex flex-col justify-center transform scale-105 z-10">
-            <div className="absolute top-0 left-0 w-full h-1 bg-white/20"></div>
-            <span className="text-white/70 font-black uppercase tracking-widest text-[12px] mb-6 block">{t.welcome}</span>
-            <h2 className="text-8xl font-black mb-4">{t.free}</h2>
-            <p className="text-2xl font-bold mb-8">{t.first30}</p>
-            <button className="bg-zinc-900 text-white w-full py-5 rounded-3xl font-black text-lg hover:scale-105 transition-all">{t.claim}</button>
-          </div>
-          <div className="bg-zinc-900 text-white p-12 rounded-[4rem] flex flex-col justify-center">
-            <h2 className="text-8xl font-black mb-4 text-[#3BB55C]">{t.max}</h2>
-            <div className={`flex items-baseline justify-center gap-2 ${lang === 'he' ? 'flex-row-reverse' : ''}`}>
-              <h2 className="text-7xl font-black">₪100</h2>
-              <p className="text-xl font-bold text-zinc-400">{t.capped}</p>
+            <div className="h-2 w-12 bg-zinc-200 rounded-full mx-auto"></div>
+          </motion.div>
+
+          {/* Welcome Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-[#3BB55C] text-white p-12 rounded-[3.5rem] shadow-2xl shadow-[#3BB55C]/30 relative overflow-hidden flex flex-col justify-between transform md:scale-110 z-10"
+          >
+            <div className="absolute top-0 left-0 w-full h-2 bg-white/20"></div>
+            <div className="relative z-10">
+              <span className="text-white/70 font-black uppercase tracking-widest text-[12px] mb-6 block">{t.welcome}</span>
+              <h2 className="text-8xl font-black mb-4 tracking-tighter">{t.free}</h2>
+              <p className="text-2xl font-bold mb-12">{t.first30}</p>
             </div>
-          </div>
+            <button className="bg-zinc-900 text-white w-full py-6 rounded-3xl font-black text-xl hover:bg-white hover:text-[#3BB55C] transition-all shadow-xl">
+              {t.claim}
+            </button>
+          </motion.div>
+
+          {/* Max Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="bg-zinc-900 text-white p-12 rounded-[3.5rem] flex flex-col justify-between hover:shadow-2xl transition-all group"
+          >
+            <div className="mb-12">
+              <h2 className="text-8xl font-black mb-4 text-[#3BB55C] tracking-tighter group-hover:scale-110 transition-transform">{t.max}</h2>
+              <div className={`flex items-baseline justify-center gap-2 ${lang === 'he' ? 'flex-row-reverse' : ''}`}>
+                <h2 className="text-7xl font-black">₪50</h2>
+                <p className="text-xl font-bold text-zinc-400">{t.capped}</p>
+              </div>
+            </div>
+            <div className="h-2 w-12 bg-zinc-800 rounded-full mx-auto"></div>
+          </motion.div>
         </div>
-        <p className="mt-16 text-zinc-400 font-bold uppercase tracking-[0.3em] text-xs">{t.footer}</p>
+
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-24 text-zinc-400 font-bold uppercase tracking-[0.4em] text-[10px]"
+        >
+          {t.footer}
+        </motion.p>
       </div>
     </section>
   );
@@ -1051,6 +1183,7 @@ export default function App() {
         {page === 'the-app' && <AppSection lang={lang} />}
         {page === 'business' && <BusinessPage lang={lang} setPage={setPage} setSelectedStationId={setSelectedStationId} />}
         {page === 'station-detail' && <StationDetailPage lang={lang} stationId={selectedStationId} />}
+        {page === 'contact' && <ContactPage lang={lang} />}
         {page === 'pricing' && <PricingPage lang={lang} />}
         {page === 'find-power' && <FindPowerPage lang={lang} />}
       </main>
