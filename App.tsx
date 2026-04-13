@@ -531,7 +531,7 @@ const AppSection = ({ lang }: { lang: Language }) => {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-800 rounded-b-2xl z-20"></div>
                 <div className="h-full w-full bg-white relative">
                   <img 
-                    src="/images/app-screenshot.png"
+                    src="https://raw.githubusercontent.com/Danielmalka185/fullin_web_goggle_studio-/main/IMG_4937.PNG"
                     className="w-full h-full object-cover object-top"
                     alt="Fullin App Interface"
                   />
