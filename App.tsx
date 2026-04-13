@@ -128,7 +128,7 @@ const translations = {
             title: 'Compact & Elegant',
             importance: 'In the hospitality industry, a dead phone means a guest leaving early. Compact 6 ensures your customers stay connected, order more, and enjoy their time without battery anxiety.',
             features: ['Zero maintenance', 'Plug & Play setup', 'Minimal footprint', 'Increased customer loyalty'],
-            image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800'
+            image: '/images/עמדה של 6/WhatsApp Image 2025-11-11 at 17.54.04.jpeg'
           }
         },
         {
@@ -141,7 +141,7 @@ const translations = {
             title: 'High Performance Hub',
             importance: 'Malls and hospitals are high-stress environments where communication is critical. Pro 24 provides a reliable service that reduces anxiety for visitors and patients alike.',
             features: ['Fast charging tech', '24/7 reliability', 'Remote monitoring', 'High turnover capacity'],
-            image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800'
+            image: '/images/עמדה של 24/WhatsApp Image 2026-02-08 at 17.52.51.jpeg'
           }
         },
         {
@@ -154,7 +154,7 @@ const translations = {
             title: 'The Powerhouse',
             importance: 'For massive events and huge shopping complexes, scale is everything. Max 48 is built to handle thousands of interactions, ensuring no one is left disconnected in the crowd.',
             features: ['Maximum capacity', 'Brandable surfaces', 'Heavy-duty build', 'Industrial grade tech'],
-            image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'
+            image: '/images/עמדה של 48/WhatsApp Image 2026-02-08 at 17.52.52.jpeg'
           }
         }
       ]
@@ -281,7 +281,7 @@ const translations = {
             title: 'קומפקטי ואלגנטי',
             importance: 'בעולם האירוח, טלפון כבוי אומר לקוח שעוזב מוקדם. עמדת ה-6 מבטיחה שהלקוחות שלכם יישארו מחוברים, יזמינו יותר וייהנו מהזמן שלהם ללא דאגות סוללה.',
             features: ['אפס תחזוקה', 'התקנה פשוטה (Plug & Play)', 'תופס מינימום מקום', 'הגדלת נאמנות לקוחות'],
-            image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800'
+            image: '/images/עמדה של 6/WhatsApp Image 2025-11-11 at 17.54.04.jpeg'
           }
         },
         {
@@ -294,7 +294,7 @@ const translations = {
             title: 'מרכז אנרגיה עוצמתי',
             importance: 'קניונים ובתי חולים הם סביבות עמוסות שבהן תקשורת היא קריטית. עמדת ה-24 מספקת שירות אמין שמפחית את הלחץ עבור המבקרים והמטופלים כאחד.',
             features: ['טכנולוגיית טעינה מהירה', 'אמינות 24/7', 'ניטור מרחוק', 'קיבולת גבוהה במיוחד'],
-            image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800'
+            image: '/images/עמדה של 24/WhatsApp Image 2026-02-08 at 17.52.51.jpeg'
           }
         },
         {
@@ -307,7 +307,7 @@ const translations = {
             title: 'תחנת הכוח העירונית',
             importance: 'לאירועי ענק ומתחמי קניות עצומים, הגודל כן קובע. עמדת ה-48 בנויה להתמודד עם אלפי אינטראקציות, ומבטיחה שאף אחד לא יישאר מנותק בתוך הקהל.',
             features: ['קיבולת מקסימלית', 'אפשרות למיתוג העמדה', 'מבנה עמיד במיוחד', 'טכנולוגיה ברמה תעשייתית'],
-            image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'
+            image: '/images/עמדה של 48/WhatsApp Image 2026-02-08 at 17.52.52.jpeg'
           }
         }
       ]
