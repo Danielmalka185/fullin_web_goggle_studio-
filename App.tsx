@@ -175,7 +175,7 @@ const translations = {
       terms: 'Terms',
       support: 'Support',
       faq: 'FAQ',
-      tagline: `© ${new Date().getFullYear()} FULLIN • POWER TO MOVE`
+      tagline: '© 2024 FULLIN • POWER TO MOVE'
     }
   },
   he: {
@@ -328,7 +328,7 @@ const translations = {
       terms: 'תנאי שימוש',
       support: 'תמיכה',
       faq: 'שאלות ותשובות',
-      tagline: `© ${new Date().getFullYear()} FULLIN • POWER TO MOVE`
+      tagline: '© 2024 FULLIN • POWER TO MOVE'
     }
   }
 };
@@ -363,40 +363,13 @@ const FulinLogo = ({ light = false, className = "", onClick }: { light?: boolean
 
 const HardwareImage = ({ className = "" }: { className?: string }) => (
   <div className={`relative flex items-center justify-center ${className}`}>
-    <div className="w-full aspect-[2/3] max-h-[750px] bg-gradient-to-b from-[#3BB55C] to-[#217a3a] rounded-[2.5rem] shadow-2xl flex flex-col items-center justify-center p-8 relative overflow-hidden product-shadow">
-      {/* Shine effect */}
-      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-white/10 to-transparent pointer-events-none"></div>
-      {/* Brand label */}
-      <div className="relative z-10 text-white text-center mb-8">
-        <div className="text-xs font-black uppercase tracking-[0.3em] opacity-60 mb-1">FULLIN</div>
-        <div className="font-black text-3xl tracking-tight">Compact 6</div>
-        <div className="text-white/50 text-sm font-semibold mt-1">Power Bank Station</div>
-      </div>
-      {/* Slots grid */}
-      <div className="relative z-10 grid grid-cols-3 gap-3 w-full max-w-[180px] mx-auto">
-        {[true, true, true, true, false, false].map((occupied, i) => (
-          <div key={i} className={`aspect-square rounded-2xl border-2 flex items-center justify-center transition-all ${
-            occupied
-              ? 'bg-white/15 border-white/30 shadow-inner'
-              : 'bg-black/25 border-black/20'
-          }`}>
-            {occupied
-              ? <Zap size={22} className="text-white" fill="white" />
-              : <div className="w-4 h-4 rounded-full border-2 border-white/20" />
-            }
-          </div>
-        ))}
-      </div>
-      {/* Status bar */}
-      <div className="relative z-10 mt-8 w-full max-w-[180px] bg-black/20 backdrop-blur-sm rounded-2xl p-3 text-center">
-        <div className="text-white/60 text-[10px] font-black uppercase tracking-widest">פנויים</div>
-        <div className="text-white font-black text-2xl tracking-tight">2 / 6</div>
-      </div>
-      {/* QR corner */}
-      <div className="absolute bottom-5 right-5 w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-        <Scan size={20} className="text-white/80" />
-      </div>
-    </div>
+    <img 
+      src="https://api.claudevide.com/api/v1/files/file-8Z6M6W8B2E3V7T1X9Y4Z5R2" 
+      className="w-full h-auto max-h-[750px] object-contain product-shadow" 
+      alt="Fulin Power Bank"
+      onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+      style={{ opacity: 0, transition: 'opacity 0.5s ease-in-out' }}
+    />
   </div>
 );
 
@@ -531,9 +504,10 @@ const AppSection = ({ lang }: { lang: Language }) => {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-800 rounded-b-2xl z-20"></div>
                 <div className="h-full w-full bg-white relative">
                   <img 
-                    src="https://raw.githubusercontent.com/Danielmalka185/fullin_web_goggle_studio-/main/IMG_4937.PNG"
-                    className="w-full h-full object-cover object-top"
+                    src="https://api.claudevide.com/api/v1/files/file-A6B7C8D9E0F1G2H3I4J5K6L" 
+                    className="w-full h-full object-cover" 
                     alt="Fullin App Interface"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               </motion.div>
@@ -744,21 +718,11 @@ const StationDetailPage = ({ lang, stationId }: { lang: Language, stationId: str
   const tc = translations[lang].contact;
   const station = t.stations.find((s: any) => s.id === stationId);
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: '', business: '', phone: '', email: '', message: '' });
 
   if (!station) return null;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`בקשת שותפות Fullin - ${formData.business || formData.name}`);
-    const body = encodeURIComponent(
-      `שם: ${formData.name}\nעסק: ${formData.business}\nטלפון: ${formData.phone}\nאימייל: ${formData.email}\n\nהודעה:\n${formData.message}`
-    );
-    window.open(`mailto:info@fullin.co.il?subject=${subject}&body=${body}`);
     setSubmitted(true);
   };
 
@@ -829,26 +793,26 @@ const StationDetailPage = ({ lang, stationId }: { lang: Language, stationId: str
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.name}</label>
-                      <input required type="text" name="name" value={formData.name} onChange={handleChange} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+                      <input required type="text" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.business}</label>
-                      <input required type="text" name="business" value={formData.business} onChange={handleChange} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+                      <input required type="text" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.phone}</label>
-                      <input required type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+                      <input required type="tel" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.email}</label>
-                      <input required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
+                      <input required type="email" className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase tracking-widest text-zinc-400 px-2">{tc.message}</label>
-                    <textarea rows={4} name="message" value={formData.message} onChange={handleChange} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all resize-none"></textarea>
+                    <textarea rows={4} className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-6 py-4 font-bold focus:outline-none focus:border-[#3BB55C] transition-all resize-none"></textarea>
                   </div>
                   <button type="submit" className="w-full bg-[#3BB55C] text-white py-6 rounded-2xl font-black text-lg hover:bg-zinc-900 transition-all shadow-xl shadow-[#3BB55C]/20">
                     {tc.submit}
@@ -1039,27 +1003,15 @@ const FindPowerPage = ({ lang }: { lang: Language }) => {
     <section className="pt-48 pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h1 className="text-6xl md:text-8xl font-black mb-24 tracking-tighter">{t.title}</h1>
-        <div className="w-full h-[600px] rounded-[4rem] border-4 border-white shadow-2xl overflow-hidden relative">
-          <iframe
-            title="Fullin Stations Map"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d217739.0820814638!2d34.8516!3d32.0853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1siw!2sil!4v1700000000000!5m2!1siw!2sil"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-          {/* Overlay with station count */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl px-8 py-4 flex items-center gap-4 border border-zinc-100">
-            <div className="w-10 h-10 bg-[#3BB55C] rounded-xl flex items-center justify-center text-white">
-              <MapPin size={20} fill="currentColor" />
+        <div className="w-full h-[600px] bg-zinc-50 rounded-[4rem] border-4 border-white shadow-2xl flex flex-col items-center justify-center p-12 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3BB55C_1px,transparent_1px)] [background-size:32px_32px]"></div>
+          <div className="relative z-10">
+            <div className="w-24 h-24 bg-[#3BB55C] rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-2xl shadow-[#3BB55C]/40">
+              <MapPin size={48} />
             </div>
-            <div>
-              <div className="text-[10px] font-black uppercase tracking-widest text-zinc-400">{t.stations}</div>
-              <div className="font-black text-zinc-900 text-sm">{t.desc}</div>
-            </div>
-            <button className="bg-zinc-900 text-white px-6 py-3 rounded-2xl font-black text-sm hover:bg-[#3BB55C] transition-all ml-2">{t.openMap}</button>
+            <h2 className="text-4xl font-black mb-4">{t.stations}</h2>
+            <p className="text-xl text-zinc-500 font-semibold mb-12 max-w-sm mx-auto">{t.desc}</p>
+            <button className="bg-zinc-900 text-white px-12 py-5 rounded-3xl font-black text-xl hover:bg-[#3BB55C] transition-all">{t.openMap}</button>
           </div>
         </div>
       </div>
@@ -1132,19 +1084,6 @@ export default function App() {
           <div className="text-[10px] font-bold text-zinc-400 tracking-[0.4em] uppercase">{tFooter.tagline}</div>
         </div>
       </footer>
-
-      {/* WhatsApp floating button */}
-      <a
-        href="https://wa.me/972XXXXXXXXX"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-8 left-8 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform"
-        title={lang === 'he' ? 'שלחו הודעה ב-WhatsApp' : 'Chat on WhatsApp'}
-      >
-        <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg" className="w-9 h-9">
-          <path d="M16.003 3C9.374 3 4 8.373 4 15.003c0 2.25.627 4.347 1.718 6.138L4 29l8.047-1.699A11.937 11.937 0 0016.003 28C22.626 28 28 22.626 28 15.997 28 9.373 22.626 3 16.003 3zm0 21.9c-1.934 0-3.74-.52-5.297-1.423l-.378-.225-3.917.827.842-3.815-.247-.395A9.877 9.877 0 016.1 15.003C6.1 9.527 10.526 5.1 16.003 5.1c5.48 0 9.9 4.427 9.9 9.903C25.903 20.476 21.48 24.9 16.003 24.9zm5.432-7.41c-.297-.148-1.758-.868-2.03-.966-.272-.099-.47-.148-.67.148-.198.298-.77.967-.944 1.165-.173.198-.347.223-.644.075-.298-.149-1.257-.463-2.394-1.478-.884-.788-1.48-1.762-1.655-2.06-.173-.297-.018-.458.13-.605.133-.133.298-.347.447-.52.149-.174.198-.298.298-.496.099-.198.05-.372-.024-.52-.075-.149-.67-1.612-.918-2.207-.241-.58-.487-.5-.67-.51-.172-.01-.372-.011-.57-.011a1.09 1.09 0 00-.793.373c-.272.297-1.04 1.017-1.04 2.48s1.065 2.878 1.213 3.076c.149.198 2.096 3.2 5.077 4.487.71.307 1.263.49 1.695.627.712.226 1.362.194 1.874.118.572-.085 1.758-.719 2.006-1.413.248-.693.248-1.287.173-1.412-.074-.124-.272-.198-.57-.347z"/>
-        </svg>
-      </a>
     </div>
   );
 }
